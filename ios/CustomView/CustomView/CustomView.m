@@ -23,7 +23,7 @@
     return self;
 }
 
-- (void)setNode:(MatchaNode *)value {
+- (void)setNode:(MatchaBuildNode *)value {
     _node = value;
     self.backgroundColor = [UIColor redColor];
 }
