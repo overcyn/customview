@@ -7,7 +7,7 @@ import (
 )
 
 type View struct {
-	*view.Embed
+	view.Embed
 	PaintStyle paint.Painter
 }
 
@@ -22,12 +22,12 @@ func New(ctx *view.Context, key string) *View {
 }
 
 // Build implements view.View.
-func (v *View) Build(ctx *view.Context) *view.Model {
+func (v *View) Build(ctx *view.Context) view.Model {
 	painter := paint.Painter(nil)
 	if v.PaintStyle != nil {
 		painter = v.PaintStyle
 	}
-	return &view.Model{
+	return view.Model{
 		NativeViewName: "github.com/overcyn/customview",
 		Painter:        painter,
 	}
